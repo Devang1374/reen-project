@@ -6,11 +6,12 @@ COPY . .
 
 # Install system packages
 RUN apt-get update && apt-get install -y \
-    unzip \
     git \
     curl \
-    libzip-dev \
+    unzip \
     zip \
+    libzip-dev \
+    default-mysql-client \
     nodejs \
     npm
 
@@ -20,13 +21,13 @@ RUN docker-php-ext-install pdo pdo_mysql zip
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Install PHP dependencies
+# Install PHP packages
 RUN composer install --no-dev --optimize-autoloader
 
-# Install Node dependencies
+# Install frontend packages
 RUN npm install
 
-# Build Vite assets
+# Build frontend
 RUN npm run build
 
 EXPOSE 10000
