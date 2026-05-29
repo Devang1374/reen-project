@@ -1,0 +1,25 @@
+.input-box, .update-form{
+    display: none;
+    top: 0;
+    z-index: 111;
+}
+
+.msg-box{
+    background: greenyellow;
+}
+
+.update-form{
+    left: 0;
+}
+
+.update-form img{
+    max-height: 200px;
+}
+
+table tr td, table tr th{
+    padding: 5px;
+}
+
+#filePath{
+    word-break: break-all;
+}
