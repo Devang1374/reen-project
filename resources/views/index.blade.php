@@ -1,4 +1,4 @@
-@extends('layouts.mylayout')
+@extends('layouts.Mylayout')
 
 @section('title', 'HOME PAGE')
 
