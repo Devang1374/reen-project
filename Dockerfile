@@ -4,18 +4,30 @@ WORKDIR /app
 
 COPY . .
 
+# Install system packages
 RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl \
     libzip-dev \
-    zip
+    zip \
+    nodejs \
+    npm
 
-RUN docker-php-ext-install zip
+# Install PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql zip
 
+# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
+
+# Install Node dependencies
+RUN npm install
+
+# Build Vite assets
+RUN npm run build
 
 EXPOSE 10000
 
