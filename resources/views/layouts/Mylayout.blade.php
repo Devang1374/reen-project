@@ -23,7 +23,7 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 </head>
 <body>
     @section('header')
@@ -181,6 +181,6 @@
     @show
 
 
-    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{asset('/js/script.js')}}"></script>
 </body>
 </html>
