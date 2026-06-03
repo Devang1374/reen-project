@@ -11,7 +11,7 @@
                     @foreach($heros as $hero)
                     <li class="splide__slide">
                         <div class="hero main-section">
-                            <img src="{{asset('Storage')}}/{{$hero['file-path']}}" alt="">
+                            <img src="{{asset('storage')}}/{{$hero['file-path']}}" alt="">
                             <div class="container">
                                 <h1>{{$hero['title']}}</h1>
                                 <div class="hero-wrapper">
@@ -71,7 +71,7 @@
                     @if($portfolio['isActive'])
                     <div class="work">
                         <div class="figure">
-                            <img src="{{asset('Storage')}}/{{$portfolio['file-path']}}" alt="">
+                            <img src="{{asset('storage')}}/{{$portfolio['file-path']}}" alt="">
                             <div class="plus-icon">
                                 <p>+</p>
                             </div>
@@ -93,7 +93,7 @@
                                 @if(!$portfolio['isActive'])
                                 <li class="splide__slide">
                                     <div class="img-container">
-                                        <img src="{{asset('Storage')}}/{{$portfolio['file-path']}}" alt="">
+                                        <img src="{{asset('storage')}}/{{$portfolio['file-path']}}" alt="">
                                         <div class="caption">
                                             <h5>{{$portfolio['title']}}</h5>
                                             <p>{{$portfolio['category']}}</p>
